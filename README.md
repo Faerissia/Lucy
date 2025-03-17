@@ -2,6 +2,10 @@
 
 This is a Discord bot that joins a voice channel, listens to users, transcribes their speech, generates an AI response using Gemini API, converts the response to speech, and plays it back in the voice channel.
 
+## Video Result
+
+[![Watch the Video](https://img.youtube.com/vi/bTCQl_k20B0/0.jpg)](https://www.youtube.com/watch?v=bTCQl_k20B0)
+
 ## Features
 
 - Joins a voice channel on command
@@ -19,6 +23,8 @@ This is a Discord bot that joins a voice channel, listens to users, transcribes 
 - prism-media
 - ffmpeg (installed and available in the system path)
 - APIKEY (gemeni OR openai)
+- [OpenAi Whisper](https://github.com/openai/whisper) (we can use STT locally)
+- [travisvn/openai-edge-tts](https://github.com/travisvn/openai-edge-tts) (Thank's a lot that he make TTS free for us)
 
 ## Installation
 
@@ -40,6 +46,7 @@ This is a Discord bot that joins a voice channel, listens to users, transcribes 
     TTS_API_KEY="YOUR TTS API KEY"
    ```
 4. Ensure `ffmpeg` is installed and accessible from the command line.
+5. install openai-Whisper and travisvn/openai-edge-tts (if you have another solution of TTS and STT you can edit some function of mine)
 
 ## Usage
 
