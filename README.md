@@ -1,20 +1,82 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Discord AI Voice Bot
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+This is a Discord bot that joins a voice channel, listens to users, transcribes their speech, generates an AI response using Gemini API, converts the response to speech, and plays it back in the voice channel.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Features
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+- Joins a voice channel on command
+- Captures and processes voice input
+- Converts speech to text (STT)
+- Generates AI responses using Gemini API
+- Converts text to speech (TTS)
+- Plays the AI response back in the voice channel
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Requirements
+
+- Node.js (latest LTS recommended)
+- Discord.js
+- @discordjs/voice
+- prism-media
+- ffmpeg (installed and available in the system path)
+- APIKEY (gemeni OR openai)
+
+## Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Faerissia/Lucy.git
+   cd Lucy
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Set up environment variables:
+   Create a `.env` file and add the following:
+   ```env
+   GEMINI_API_KEY="YOUR GEMINI API KEY"
+    DISCORD_TOKEN="YOUR DISCORD TOKEN"
+    TTS_API_URL="YOUR TTS API URL"
+    TTS_API_KEY="YOUR TTS API KEY"
+   ```
+4. Ensure `ffmpeg` is installed and accessible from the command line.
+
+## Usage
+
+1. Start the bot:
+   ```sh
+   npm run dev
+   ```
+2. Invite the bot to a server and join a voice channel.
+3. Use the command `!join` in a text channel to make the bot join the voice channel.
+4. Speak, and the bot will process your voice and respond using AI.
+
+## File Structure
+
+```
+📂 discord-ai-voice-bot
+├── 📂 config
+│   ├── discord.js       # Discord client configuration
+│   ├── gemini.js        # AI response generation
+│   ├── STS.js           # Speech-to-Text processing
+│   ├── TTS.js           # Text-to-Speech processing
+├── 📂 services
+│   ├── tools.js         # Audio playback utilities
+├── index.js             # Main bot entry point
+├── .env                 # Environment variables
+├── voice-userid.mp3                 # bot will save listen sound from user
+├── package.json         # Dependencies and scripts
+```
+
+## Dependencies
+
+- `discord.js`
+- `@discordjs/voice`
+- `prism-media`
+- `dotenv`
+- `fs`
+- `child_process`
+
+## License
+
+This project is licensed under the MIT License.
